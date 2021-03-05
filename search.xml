@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo-install-tutorial</title>
+    <url>/2021/03/06/hexo-install-tutorial/</url>
+    <content><![CDATA[<p>主要记录下这几天搭建第一次使用hexo博客踩坑的过程，为了以后能少遇到点坑</p>
+<h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><hr>
+<p>一切以<a href="https://hexo.io/zh-cn/docs/">hexo官网安装文档</a>为准～</p>
+<h2 id="安装Homebrew-插曲"><a href="#安装Homebrew-插曲" class="headerlink" title="安装Homebrew-插曲"></a>安装Homebrew-插曲</h2><p>Homebrew 是一个包管理工具。相信我，每一个Mac都必备的包管理工具🔧</p>
+<p>打开终端<code>terminal</code><a href="https://brew.sh/">官网一行代码安装</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="question"><a href="#question" class="headerlink" title="question"></a>question</h3><ul>
+<li>输入这条命令回车执行后，由于访问<a href="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh%E8%BF%99%E4%B8%AA%E7%BD%91%E7%AB%99%E7%94%B1%E4%BA%8E%E5%9B%BD%E5%86%85%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98%EF%BC%8C%E7%BB%88%E7%AB%AF%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%87%BA%E7%8E%B0%E7%9B%B4%E6%8E%A5%E5%8D%A1%E6%AD%BB%EF%BC%88%E4%BD%86%E6%98%AF%E7%9B%B4%E6%8E%A5%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8D%B4%E8%83%BD%E5%BE%88%E5%BF%AB%E6%89%93%E5%BC%80%E8%BF%99%E4%B8%AA%E7%BD%91%E5%9D%80%EF%BC%89%E3%80%82">https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh这个网站由于国内网络环境问题，终端可能会出现直接卡死（但是直接用浏览器却能很快打开这个网址）。</a></li>
+<li><code>brew install</code>时下载速度非常慢</li>
+</ul>
+<h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p><a href="http://mirrors.ustc.edu.cn/help/brew.git.html">中科大源，你值得用</a> </p>
+<h1 id="安装hexo美化主题nexT"><a href="#安装hexo美化主题nexT" class="headerlink" title="安装hexo美化主题nexT"></a><a href="https://theme-next.js.org/docs/getting-started/">安装hexo美化主题nexT</a></h1><p>Open your Terminal, change to Hexo site root directory and install NexT theme:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> hexo-site</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-theme-next</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://siriusq.top/Next%E5%8D%87%E7%BA%A7-Mac%E8%BF%81%E7%A7%BB.html">美化参考</a></p>
+<h1 id="部署参考"><a href="#部署参考" class="headerlink" title="部署参考"></a><a href="https://blog.csdn.net/yakuaback/article/details/104513748">部署参考</a></h1><p>部署插件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="开始踩坑"><a href="#开始踩坑" class="headerlink" title="开始踩坑"></a>开始踩坑</h1><hr>
+<p>一把辛酸泪😭</p>
+<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 电脑版本</span></span><br><span class="line">ProductName:	macOS</span><br><span class="line">ProductVersion:	11.2.2</span><br><span class="line">BuildVersion:	20D80</span><br><span class="line"><span class="meta">#</span><span class="bash"> hexo版本</span></span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  ==================================</span><br><span class="line">  ███╗   ██╗███████╗██╗  ██╗████████╗</span><br><span class="line">  ████╗  ██║██╔════╝╚██╗██╔╝╚══██╔══╝</span><br><span class="line">  ██╔██╗ ██║█████╗   ╚███╔╝    ██║</span><br><span class="line">  ██║╚██╗██║██╔══╝   ██╔██╗    ██║</span><br><span class="line">  ██║ ╚████║███████╗██╔╝ ██╗   ██║</span><br><span class="line">  ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝   ╚═╝</span><br><span class="line">========================================</span><br><span class="line">NexT version 8.2.2</span><br><span class="line">Documentation: https://theme-next.js.org</span><br><span class="line">========================================</span><br><span class="line">hexo: 5.4.0</span><br><span class="line">hexo-cli: 4.2.0</span><br><span class="line">os: Darwin 20.3.0 darwin arm64</span><br><span class="line">node: 15.9.0</span><br><span class="line">v8: 8.6.395.17-node.25</span><br><span class="line">uv: 1.41.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.9</span><br><span class="line">ares: 1.17.1</span><br><span class="line">modules: 88</span><br><span class="line">nghttp2: 1.42.0</span><br><span class="line">napi: 7</span><br><span class="line">llhttp: 2.1.3</span><br><span class="line">openssl: 1.1.1i</span><br><span class="line">cldr: 37.0</span><br><span class="line">icu: 67.1</span><br><span class="line">tz: 2019c</span><br><span class="line">unicode: 13.0</span><br></pre></td></tr></table></figure>
+
+<h2 id="部署命令太长"><a href="#部署命令太长" class="headerlink" title="部署命令太长"></a>部署命令太长</h2><h4 id="solution-1"><a href="#solution-1" class="headerlink" title="solution"></a>solution</h4><p>在<code>~/.zshrc</code>增加别名</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">alias hd=&#x27;hexo clean &amp;&amp; hexo g &amp;&amp; hexo d&#x27;</span><br><span class="line">alias hs=&#x27;hexo clean &amp;&amp; hexo g &amp;&amp; hexo s&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="about-、tags等指定-about-相对路径的页面"><a href="#about-、tags等指定-about-相对路径的页面" class="headerlink" title="about 、tags等指定/about/相对路径的页面"></a>about 、tags等指定/about/相对路径的页面</h2><h4 id="solution-2"><a href="#solution-2" class="headerlink" title="solution"></a>solution</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page &quot;about&quot;</span><br><span class="line">hexo new page &quot;tags&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="图片显示问题-图裂"><a href="#图片显示问题-图裂" class="headerlink" title="图片显示问题-图裂"></a>图片显示问题-图裂</h2><p>markdown编辑器与博客里不能同时显示图片</p>
+<h3 id="solution-3"><a href="#solution-3" class="headerlink" title="solution"></a>solution</h3><ol>
+<li>设置每次生成文章时，同时生成一个同名文件夹，用来存放图片。<code>_config.yml</code>里找到<code>post_asset_folder</code>设置为<code>true</code>。即<code>post_asset_folder: true</code></li>
+<li>设置markdown编辑器保存图片的路径为同名文件夹并优先使用相对路径。图为使用typora编辑器</li>
+</ol>
+<p><img src="/2021/03/06/hexo-install-tutorial/image-20210306030054324.png" alt="设置图片选项"></p>
+<ol start="3">
+<li>安装插件-一定要安装下面链接里面的，网上有很多别的，亲测都不成功😢</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image</span><br></pre></td></tr></table></figure>
+
+<h2 id="nexT配置-更改头像-路径问题"><a href="#nexT配置-更改头像-路径问题" class="headerlink" title="nexT配置-更改头像-路径问题"></a>nexT配置-更改头像-路径问题</h2><p>npm安装的主题文件在<code>node_modules/hexo-theme-next/</code>里面！！！<code>_config.next.yml</code>中使用的是相对位于``./node_modules/hexo-theme-next/source<code>的路径，所以实际要把图片发在</code>./node_modules/hexo-theme-next/source/<code>这个目录里。例如头像的实际路径为</code>/Users/shinan/blog/node_modules/hexo-theme-next/source/images/avatar.png`</p>
+<p>配置文件也是从<code>./node_modules/hexo-theme-next/</code>这里面复制出来的</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp node_modules/hexo-theme-next/_config.yml _config.next.yml</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="gitalk-出现403"><a href="#gitalk-出现403" class="headerlink" title="gitalk-出现403"></a>gitalk-出现403</h2><p>反向代理有问题<a href="https://liuyueyang.top/022111.html#%E5%88%86%E6%9E%90">参考</a></p>
+<h4 id="solution-4"><a href="#solution-4" class="headerlink" title="solution"></a>solution</h4><p><code>_config.next.yml</code>更改proxy</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="comment">#proxy: https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token # This is official proxy adress</span></span><br><span class="line">  <span class="attr">proxy:</span> <span class="string">https://shielded-brushlands-08810.herokuapp.com/https://github.com/login/oauth/access_token</span></span><br></pre></td></tr></table></figure>
+
+<p>这个插件每篇文章都要登进去初始化一下</p>
+<h2 id="同时部署GitHub-gitee-自动部署分支为master"><a href="#同时部署GitHub-gitee-自动部署分支为master" class="headerlink" title="同时部署GitHub,gitee-自动部署分支为master"></a>同时部署GitHub,gitee-自动部署分支为master</h2><p>github-pages 、gitee-pages默认部署为main分支</p>
+<p>单一部署时，<code>_config.yml</code>里配置推送的分支为main生效，同时部署时就不生效了（迷惑🙁）。</p>
+<h3 id="solution-5"><a href="#solution-5" class="headerlink" title="solution"></a>solution</h3><p>在仓库里更改默认的部署分支</p>
+<p><img src="/2021/03/06/hexo-install-tutorial/image-20210306033805713.png" alt="gitee更改"></p>
+<p><img src="/2021/03/06/hexo-install-tutorial/image-20210306034610817.png" alt="github更改"></p>
+<h2 id="同时部署GitHub-gitee-只能配置其中的一个能看文章详情"><a href="#同时部署GitHub-gitee-只能配置其中的一个能看文章详情" class="headerlink" title="同时部署GitHub,gitee-只能配置其中的一个能看文章详情"></a>同时部署GitHub,gitee-只能配置其中的一个能看文章详情</h2><p>由于只能在<code>_config.yml</code>里配置一个访问路径。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> URL</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">url: http://jojo-995.github.io</span></span><br><span class="line">url: https://jojo-995.gitee.io</span><br></pre></td></tr></table></figure>
+
+<h3 id="solution-6"><a href="#solution-6" class="headerlink" title="solution"></a>solution</h3><p>待解决。目前暂时先选择使用gitee</p>
+<h2 id="github经常在命令行里443"><a href="#github经常在命令行里443" class="headerlink" title="github经常在命令行里443"></a>github经常在命令行里443</h2><p>解析github相关网站域名经常经常出现问题</p>
+<h4 id="solution-7"><a href="#solution-7" class="headerlink" title="solution"></a>solution</h4><p>把代理关掉或者换个代理或者修改hosts文件，绑定ip</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/hosts</span><br><span class="line"><span class="comment"># 添加</span></span><br><span class="line"><span class="comment"># for github</span></span><br><span class="line">140.82.113.4 github.com</span><br><span class="line">199.232.69.194 github.global.ssl.fastly.net</span><br><span class="line">185.199.108.153  assets-cdn.github.com</span><br><span class="line">185.199.109.153  assets-cdn.github.com</span><br><span class="line">185.199.110.153  assets-cdn.github.com</span><br><span class="line">185.199.111.153  assets-cdn.github.com</span><br><span class="line">185.199.108.133 raw.githubusercontent.com</span><br><span class="line">185.199.109.133 raw.githubusercontent.com</span><br><span class="line">185.199.110.133 raw.githubusercontent.com</span><br><span class="line">185.199.111.133 raw.githubusercontent.com</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>hexo安装10分钟，踩坑十小时😤 终于结束了！！说好了从明天起开始早起又黄了🙄</p>
+]]></content>
+      <tags>
+        <tag>tutorial</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>✨登场</title>
     <url>/2021/03/05/%E2%9C%A8%E7%99%BB%E5%9C%BA/</url>
     <content><![CDATA[<h1 id="第一篇博客👀"><a href="#第一篇博客👀" class="headerlink" title="第一篇博客👀"></a>第一篇博客👀</h1><p>美化博客真的是太费时费力了 希望以后都不用再管了😭</p>
