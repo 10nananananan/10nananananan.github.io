@@ -1,35 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
-  <entry>
-    <title>image test</title>
-    <url>/2021/03/05/image-test/</url>
-    <content><![CDATA[<h1 id="hahhahasdfhah"><a href="#hahhahasdfhah" class="headerlink" title="hahhahasdfhah"></a>hahhahasdfhah</h1><p><img src="/2021/03/05/image-test/image-20210305022111756.png" alt="image-20210305022111756"></p>
-]]></content>
-      <tags>
-        <tag>life</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>today is the best day</title>
-    <url>/2021/03/05/today-is-the-best-day/</url>
-    <content><![CDATA[<h1 id="宇宙的第一天👀"><a href="#宇宙的第一天👀" class="headerlink" title="宇宙的第一天👀"></a>宇宙的第一天👀</h1><p>fab fa-font-awesome第三方</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd ~</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h2><p>哈哈哈啊啊啊</p>
-]]></content>
-      <categories>
-        <category>first-level</category>
-        <category>second-level</category>
-      </categories>
-      <tags>
-        <tag>life</tag>
-        <tag>study</tag>
-      </tags>
-  </entry>
 </search>
