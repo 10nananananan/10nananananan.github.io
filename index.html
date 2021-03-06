@@ -88,6 +88,8 @@
   </style>
 </noscript>
 
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
@@ -278,7 +280,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-03-06 14:06:13 / 修改时间：19:13:26" itemprop="dateCreated datePublished" datetime="2021-03-06T14:06:13+08:00">2021-03-06</time>
+      <time title="创建时间：2021-03-06 14:06:13 / 修改时间：22:46:36" itemprop="dateCreated datePublished" datetime="2021-03-06T14:06:13+08:00">2021-03-06</time>
     </span>
 
   
@@ -295,7 +297,7 @@
 <p>高情商：保姆级教程涅槃重生</p>
 <p><del>低情商：之前的🌶️👀</del></p>
 <hr>
-<h1 id="MarkDown教程"><a href="#MarkDown教程" class="headerlink" title="MarkDown教程"></a>MarkDown教程</h1><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息(我最经常就是拿来写记笔记、写<a href="http://jojo-995.gitee.io/">个人博客</a>)。视频的文档都会放在这个博客里面</p>
+<h1 id="MarkDown教程"><a href="#MarkDown教程" class="headerlink" title="MarkDown教程"></a>MarkDown教程</h1><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息(我最经常就是拿来写记笔记、写<a href="http://jojo-995.gitee.io/">个人博客</a>)。视频的文档都会放在这个博客里面。博客里显示可能跟视频不一样是因为浏览器解析的问题，相信你自己电脑里的typora就好～</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/03/06/markdown-tutorial/#more" rel="contents">
@@ -354,7 +356,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-03-06 01:19:08 / 修改时间：19:05:41" itemprop="dateCreated datePublished" datetime="2021-03-06T01:19:08+08:00">2021-03-06</time>
+      <time title="创建时间：2021-03-06 01:19:08 / 修改时间：21:54:02" itemprop="dateCreated datePublished" datetime="2021-03-06T01:19:08+08:00">2021-03-06</time>
     </span>
 
   
@@ -562,6 +564,19 @@ document.addEventListener('pjax:success', () => {
 
 
 
+<script data-pjax>
+if (document.querySelectorAll('.mermaid').length) {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/mermaid@8.9.1/dist/mermaid.min.js', () => {
+    mermaid.init({
+      theme    : 'neutral',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    }, '.mermaid');
+  }, window.mermaid);
+}
+</script>
 
 
   
