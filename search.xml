@@ -1,6 +1,454 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>leetcode</title>
+    <url>/2021/03/11/leetcode/</url>
+    <content><![CDATA[<hr>
+<p>Leetcode 刷题</p>
+<hr>
+<h1 id="双指针-一个遍历指针，一个指向最终结果的指针"><a href="#双指针-一个遍历指针，一个指向最终结果的指针" class="headerlink" title="双指针-一个遍历指针，一个指向最终结果的指针"></a>双指针-一个遍历指针，一个指向最终结果的指针</h1><h2 id="283-Move-Zeroes"><a href="#283-Move-Zeroes" class="headerlink" title="283. Move Zeroes"></a><a href="https://leetcode-cn.com/problems/move-zeroes/">283. Move Zeroes</a></h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">moveZeroes</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//[0...k) store non-zero</span>
+        <span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i<span class="token operator">&lt;</span> nums<span class="token punctuation">.</span>length <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                nums<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                k<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> k<span class="token punctuation">;</span> j <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="27-Remove-Element"><a href="#27-Remove-Element" class="headerlink" title="27. Remove Element"></a><a href="https://leetcode-cn.com/problems/remove-element/">27. Remove Element</a></h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">removeElement</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">//[0...k) store non-val</span>
+        <span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i<span class="token operator">&lt;</span> nums<span class="token punctuation">.</span>length <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> val<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                nums<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                k<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+ 
+        <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">int</span> j<span class="token operator">=</span>k<span class="token punctuation">;</span>j<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    
+           nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> k<span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="26-Remove-Duplicates-from-Sorted-Array"><a href="#26-Remove-Duplicates-from-Sorted-Array" class="headerlink" title="26. Remove Duplicates from Sorted Array"></a><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/">26. Remove Duplicates from Sorted Array</a></h2><p><code>sorted array</code></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">removeDuplicates</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token comment">// nums[0...k]store non-duplicate</span>
+        <span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> nums<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                k<span class="token operator">++</span><span class="token punctuation">;</span>
+                nums<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> k <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h1 id="topK"><a href="#topK" class="headerlink" title="topK"></a>topK</h1><h2 id="215-Kth-Largest-Element-in-an-Array"><a href="#215-Kth-Largest-Element-in-an-Array" class="headerlink" title="215. Kth Largest Element in an Array"></a><a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">215. Kth Largest Element in an Array</a></h2><ul>
+<li>快排-速度快</li>
+<li>堆排序-支持数据的动态增长</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Random</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token comment">//1 ≤ k ≤ 数组的长度</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">findKthLargest</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//找第k大转换为找有序排列时的nums[k]</span>
+        k <span class="token operator">=</span> nums<span class="token punctuation">.</span>length <span class="token operator">-</span> k<span class="token punctuation">;</span>
+        <span class="token class-name">Random</span> rdm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> num <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token function">findKthLargestR</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> nums<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> k<span class="token punctuation">,</span> rdm<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> num<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token comment">//arr[l...r]中寻找nums[k] 并返回nums[k]的位置</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> <span class="token function">findKthLargestR</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">,</span> <span class="token class-name">Random</span> rdm<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>l <span class="token operator">&gt;</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">int</span> p <span class="token operator">=</span> <span class="token function">partition</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> l<span class="token punctuation">,</span> r<span class="token punctuation">,</span> rdm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">&lt;</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           <span class="token keyword">return</span> <span class="token function">findKthLargestR</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> p <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">,</span> k<span class="token punctuation">,</span>rdm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">&gt;</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           <span class="token keyword">return</span> <span class="token function">findKthLargestR</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> l<span class="token punctuation">,</span> p <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span>  k<span class="token punctuation">,</span>rdm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//arr[l...r]中寻找nums[k] 并返回nums[k]的位置 非递归</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> <span class="token function">findKthLargest</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">,</span> <span class="token class-name">Random</span> rdm<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>l <span class="token operator">&gt;</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">int</span> p <span class="token operator">=</span> <span class="token function">partition</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> l<span class="token punctuation">,</span> r<span class="token punctuation">,</span> rdm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>p <span class="token operator">!=</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">&lt;</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                p <span class="token operator">=</span> <span class="token function">partition</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> p <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">,</span> rdm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>p <span class="token operator">&gt;</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                p <span class="token operator">=</span> <span class="token function">partition</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> l<span class="token punctuation">,</span> p <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> rdm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">int</span> <span class="token function">partition</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span> <span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> r<span class="token punctuation">,</span> <span class="token class-name">Random</span> rdm<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//随机索引</span>
+        <span class="token keyword">int</span> p <span class="token operator">=</span> rdm<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span>r <span class="token operator">-</span> l <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> l<span class="token punctuation">;</span>
+        <span class="token comment">//保持arr[l]为pivot</span>
+        <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> l<span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// arr[l+1...i-1]&lt;v , arr[j+1...r]&gt;v, i is working-pointer</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> l <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> j <span class="token operator">=</span> r<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> j <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                i<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;=</span> j <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">-</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                j<span class="token operator">--</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&gt;=</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            i<span class="token operator">++</span><span class="token punctuation">;</span>
+            j<span class="token operator">--</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span>
+        <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> l<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> j<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> minIndex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> tmp <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>minIndex<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>minIndex<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">findKthLargest</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h1 id="对撞指针-涉及左右两个方向、翻转"><a href="#对撞指针-涉及左右两个方向、翻转" class="headerlink" title="对撞指针-涉及左右两个方向、翻转"></a>对撞指针-涉及左右两个方向、翻转</h1><h2 id="167-Two-Sum-II-Input-array-is-sorted"><a href="#167-Two-Sum-II-Input-array-is-sorted" class="headerlink" title="167. Two Sum II - Input array is sorted"></a><a href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/">167. Two Sum II - Input array is sorted</a></h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">twoSum</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> numbers<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> res <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> l <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> r <span class="token operator">=</span> numbers<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>numbers<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">+</span> numbers<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">&lt;</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                l<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>numbers<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">+</span> numbers<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">&gt;</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                r<span class="token operator">--</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> l <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                res<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> r <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> ints <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">twoSum</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="125-Valid-Palindrome"><a href="#125-Valid-Palindrome" class="headerlink" title="125. Valid Palindrome"></a><a href="https://leetcode-cn.com/problems/valid-palindrome/">125. Valid Palindrome</a></h2><h2 id="345-Reverse-Vowels-of-a-String"><a href="#345-Reverse-Vowels-of-a-String" class="headerlink" title="345. Reverse Vowels of a String"></a><a href="https://leetcode-cn.com/problems/reverse-vowels-of-a-string/">345. Reverse Vowels of a String</a></h2><h2 id="11-Container-With-Most-Water"><a href="#11-Container-With-Most-Water" class="headerlink" title="11. Container With Most Water"></a><a href="https://leetcode-cn.com/problems/container-with-most-water/">11. Container With Most Water</a></h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">maxArea</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> height<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> l <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> r <span class="token operator">=</span> height<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>l<span class="token operator">&lt;</span>r<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">int</span> cur <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>height<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> height<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                cur <span class="token operator">=</span> height<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>r <span class="token operator">-</span> l<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                max <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>max<span class="token punctuation">,</span>cur<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                l<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+                cur <span class="token operator">=</span> height<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>r <span class="token operator">-</span> l<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                max <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>max<span class="token punctuation">,</span>cur<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                r<span class="token operator">--</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> max<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h1 id="滑动窗口-子串"><a href="#滑动窗口-子串" class="headerlink" title="滑动窗口-子串"></a>滑动窗口-子串</h1><h2 id="209-Minimum-Size-Subarray-Sum"><a href="#209-Minimum-Size-Subarray-Sum" class="headerlink" title="209. Minimum Size Subarray Sum"></a><a href="https://leetcode-cn.com/problems/minimum-size-subarray-sum/">209. Minimum Size Subarray Sum</a></h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">minSubArrayLen</span><span class="token punctuation">(</span><span class="token keyword">int</span> target<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//nums[l...r]为滑动窗口</span>
+        <span class="token keyword">int</span> l <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> r <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> res <span class="token operator">=</span> nums<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span> r <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span>sum <span class="token operator">&lt;</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                r<span class="token operator">++</span><span class="token punctuation">;</span>
+                sum <span class="token operator">+=</span> nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+                sum <span class="token operator">-=</span> nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                l<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>sum<span class="token operator">&gt;=</span>target<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                res <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> r <span class="token operator">-</span> l <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span> res <span class="token operator">==</span> nums<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+                
+        
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="3-Longest-Substring-Without-Repeating-Characters"><a href="#3-Longest-Substring-Without-Repeating-Characters" class="headerlink" title="3. Longest Substring Without Repeating Characters"></a><a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/">3. Longest Substring Without Repeating Characters</a></h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> freq <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">256</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">//s[l...r]为滑动窗口</span>
+        <span class="token keyword">int</span> l <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> r <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span> r<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">&lt;</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> freq<span class="token punctuation">[</span>s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>r<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                r<span class="token operator">++</span><span class="token punctuation">;</span>
+                freq<span class="token punctuation">[</span>s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                freq<span class="token punctuation">[</span>s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token operator">--</span><span class="token punctuation">;</span>
+                l<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            res <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> r <span class="token operator">-</span> l <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="438-Find-All-Anagrams-in-a-String"><a href="#438-Find-All-Anagrams-in-a-String" class="headerlink" title="438. Find All Anagrams in a String"></a><a href="https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/">438. Find All Anagrams in a String</a></h2><h2 id="76-Minimum-Window-Substring"><a href="#76-Minimum-Window-Substring" class="headerlink" title="76. Minimum Window Substring"></a><a href="https://leetcode-cn.com/problems/minimum-window-substring/">76. Minimum Window Substring</a></h2><h1 id="查找数组中满足某些条件-异位词-HashSet-HashMap"><a href="#查找数组中满足某些条件-异位词-HashSet-HashMap" class="headerlink" title="查找数组中满足某些条件(异位词)-HashSet,HashMap"></a>查找数组中满足某些条件(异位词)-HashSet,HashMap</h1><h2 id="349-Intersection-of-Two-Arrays"><a href="#349-Intersection-of-Two-Arrays" class="headerlink" title="349. Intersection of Two Arrays"></a><a href="https://leetcode-cn.com/problems/intersection-of-two-arrays/">349. Intersection of Two Arrays</a></h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">HashSet</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">intersection</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums1<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> <span class="token keyword">record</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> resultSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">:</span> nums1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">record</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">:</span> nums2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">record</span><span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                resultSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> res <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>resultSet<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Integer</span> re <span class="token operator">:</span> resultSet<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            res<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> re<span class="token punctuation">;</span>
+            i<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><h2 id="翻转-pre-null"><a href="#翻转-pre-null" class="headerlink" title="翻转 -pre =null"></a>翻转 -pre =null</h2><h2 id="删除-pre-dummyHead"><a href="#删除-pre-dummyHead" class="headerlink" title="删除-pre=dummyHead"></a>删除-pre=dummyHead</h2>]]></content>
+      <tags>
+        <tag>study</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo-install-tutorial</title>
+    <url>/2021/03/06/hexo-install-tutorial/</url>
+    <content><![CDATA[<p>主要记录下这几天搭建第一次使用hexo博客==踩坑==的<strong>过程</strong>，为了以后能少遇到点坑</p>
+<span id="more"></span>
+
+<h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><hr>
+<p>一切以<a href="https://hexo.io/zh-cn/docs/">hexo官网安装文档</a>为准～</p>
+<h2 id="安装Homebrew-插曲"><a href="#安装Homebrew-插曲" class="headerlink" title="安装Homebrew-插曲"></a>安装Homebrew-插曲</h2><p>Homebrew 是一个包管理工具。相信我，每一个Mac都必备的包管理工具🔧</p>
+<p>打开终端<code>terminal</code><a href="https://brew.sh/">官网一行代码安装</a></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="question"><a href="#question" class="headerlink" title="question"></a>question</h3><ul>
+<li>输入这条命令回车执行后，由于访问<a href="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh%E8%BF%99%E4%B8%AA%E7%BD%91%E7%AB%99%E7%94%B1%E4%BA%8E%E5%9B%BD%E5%86%85%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98%EF%BC%8C%E7%BB%88%E7%AB%AF%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%87%BA%E7%8E%B0%E7%9B%B4%E6%8E%A5%E5%8D%A1%E6%AD%BB%EF%BC%88%E4%BD%86%E6%98%AF%E7%9B%B4%E6%8E%A5%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8D%B4%E8%83%BD%E5%BE%88%E5%BF%AB%E6%89%93%E5%BC%80%E8%BF%99%E4%B8%AA%E7%BD%91%E5%9D%80%EF%BC%89%E3%80%82">https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh这个网站由于国内网络环境问题，终端可能会出现直接卡死（但是直接用浏览器却能很快打开这个网址）。</a></li>
+<li><code>brew install</code>时下载速度非常慢</li>
+</ul>
+<h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p><a href="http://mirrors.ustc.edu.cn/help/brew.git.html">中科大源，你值得用</a> </p>
+<h1 id="安装hexo美化主题nexT"><a href="#安装hexo美化主题nexT" class="headerlink" title="安装hexo美化主题nexT"></a><a href="https://theme-next.js.org/docs/getting-started/">安装hexo美化主题nexT</a></h1><blockquote>
+<p>Open your Terminal, change to Hexo site root directory and install NexT theme:</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">$ cd hexo-site
+$ npm install hexo-theme-next<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</blockquote>
+<p><a href="https://siriusq.top/Next%E5%8D%87%E7%BA%A7-Mac%E8%BF%81%E7%A7%BB.html">美化参考</a></p>
+<h1 id="部署参考"><a href="#部署参考" class="headerlink" title="部署参考"></a><a href="https://blog.csdn.net/yakuaback/article/details/104513748">部署参考</a></h1><p>部署插件</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h1 id="开始踩坑"><a href="#开始踩坑" class="headerlink" title="开始踩坑"></a>开始踩坑</h1><hr>
+<p>一把辛酸泪😭</p>
+<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 电脑版本
+ProductName:	macOS
+ProductVersion:	11.2.2
+BuildVersion:	20D80
+# hexo版本
+INFO  Validating config
+INFO  ==================================
+  ███╗   ██╗███████╗██╗  ██╗████████╗
+  ████╗  ██║██╔════╝╚██╗██╔╝╚══██╔══╝
+  ██╔██╗ ██║█████╗   ╚███╔╝    ██║
+  ██║╚██╗██║██╔══╝   ██╔██╗    ██║
+  ██║ ╚████║███████╗██╔╝ ██╗   ██║
+  ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝   ╚═╝
+========================================
+NexT version 8.2.2
+Documentation: https://theme-next.js.org
+========================================
+hexo: 5.4.0
+hexo-cli: 4.2.0
+os: Darwin 20.3.0 darwin arm64
+node: 15.9.0
+v8: 8.6.395.17-node.25
+uv: 1.41.0
+zlib: 1.2.11
+brotli: 1.0.9
+ares: 1.17.1
+modules: 88
+nghttp2: 1.42.0
+napi: 7
+llhttp: 2.1.3
+openssl: 1.1.1i
+cldr: 37.0
+icu: 67.1
+tz: 2019c
+unicode: 13.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="部署命令太长"><a href="#部署命令太长" class="headerlink" title="部署命令太长"></a>部署命令太长</h2><h4 id="solution-1"><a href="#solution-1" class="headerlink" title="solution"></a>solution</h4><p>在<code>~/.zshrc</code>增加别名</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">alias hd='hexo clean &amp;&amp; hexo g &amp;&amp; hexo d'
+alias hs='hexo clean &amp;&amp; hexo g &amp;&amp; hexo s'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="about-、tags等指定-about-相对路径的页面"><a href="#about-、tags等指定-about-相对路径的页面" class="headerlink" title="about 、tags等指定/about/相对路径的页面"></a>about 、tags等指定/about/相对路径的页面</h2><h4 id="solution-2"><a href="#solution-2" class="headerlink" title="solution"></a>solution</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hexo new page "about"
+hexo new page "tags"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="图片显示问题-图裂"><a href="#图片显示问题-图裂" class="headerlink" title="图片显示问题-图裂"></a>图片显示问题-图裂</h2><p>markdown编辑器与博客里不能同时显示图片</p>
+<h3 id="solution-3"><a href="#solution-3" class="headerlink" title="solution"></a>solution</h3><ol>
+<li>设置每次生成文章时，同时生成一个同名文件夹，用来存放图片。<code>_config.yml</code>里找到<code>post_asset_folder</code>设置为<code>true</code>。即<code>post_asset_folder: true</code></li>
+<li>设置markdown编辑器保存图片的路径为同名文件夹并优先使用相对路径。图为使用typora编辑器</li>
+</ol>
+<p><img src="/2021/03/06/hexo-install-tutorial/image-20210306030054324.png" alt="设置图片选项"></p>
+<ol start="3">
+<li>安装插件-<strong>一定</strong>要安装下面链接里面的，网上有很多别的，亲测都不成功😢</li>
+</ol>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm install https://github.com/CodeFalling/hexo-asset-image<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="nexT配置-更改头像-路径问题"><a href="#nexT配置-更改头像-路径问题" class="headerlink" title="nexT配置-更改头像-路径问题"></a>nexT配置-更改头像-路径问题</h2><p>npm安装的主题文件在<code>node_modules/hexo-theme-next/</code>里面！！！<code>_config.next.yml</code>中使用的是相对位于``./node_modules/hexo-theme-next/source<code>的路径，所以实际要把图片发在</code>./node_modules/hexo-theme-next/source/<code>这个目录里。例如头像的实际路径为</code>/Users/shinan/blog/node_modules/hexo-theme-next/source/images/avatar.png`</p>
+<p>配置文件也是从<code>./node_modules/hexo-theme-next/</code>这里面复制出来的</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cp node_modules/hexo-theme-next/_config.yml _config.next.yml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="gitalk-出现403"><a href="#gitalk-出现403" class="headerlink" title="gitalk-出现403"></a>gitalk-出现403</h2><p>反向代理有问题<a href="https://liuyueyang.top/022111.html#%E5%88%86%E6%9E%90">参考</a></p>
+<h4 id="solution-4"><a href="#solution-4" class="headerlink" title="solution"></a>solution</h4><p><code>_config.next.yml</code>更改proxy</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">gitalk</span><span class="token punctuation">:</span>
+  <span class="token comment">#proxy: https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token # This is official proxy adress</span>
+  <span class="token key atrule">proxy</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//shielded<span class="token punctuation">-</span>brushlands<span class="token punctuation">-</span>08810.herokuapp.com/https<span class="token punctuation">:</span>//github.com/login/oauth/access_token<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>这个插件每篇文章都要<strong>登进去初始化</strong>一下</p>
+<h2 id="同时部署GitHub-gitee-自动部署分支为master"><a href="#同时部署GitHub-gitee-自动部署分支为master" class="headerlink" title="同时部署GitHub,gitee-自动部署分支为master"></a>同时部署GitHub,gitee-自动部署分支为master</h2><p>github-pages 、gitee-pages默认部署为main分支</p>
+<p>单一部署时，<code>_config.yml</code>里配置推送的分支为main生效，同时部署时就不生效了（迷惑🙁）。</p>
+<h3 id="solution-5"><a href="#solution-5" class="headerlink" title="solution"></a>solution</h3><p>在仓库里更改默认的部署分支</p>
+<p><img src="/2021/03/06/hexo-install-tutorial/image-20210306033805713.png" alt="gitee更改"></p>
+<p><img src="/2021/03/06/hexo-install-tutorial/image-20210306034610817.png" alt="github更改"></p>
+<h2 id="同时部署GitHub-gitee-只能配置其中的一个能看文章详情"><a href="#同时部署GitHub-gitee-只能配置其中的一个能看文章详情" class="headerlink" title="同时部署GitHub,gitee-只能配置其中的一个能看文章详情"></a>同时部署GitHub,gitee-只能配置其中的一个能看文章详情</h2><p>由于只能在<code>_config.yml</code>里配置一个访问路径。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># URL
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+#url: http://jojo-995.github.io
+url: https://jojo-995.gitee.io<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="solution-6"><a href="#solution-6" class="headerlink" title="solution"></a>solution</h3><p>待解决。目前暂时先选择使用gitee</p>
+<h2 id="github经常在命令行里443"><a href="#github经常在命令行里443" class="headerlink" title="github经常在命令行里443"></a>github经常在命令行里443</h2><p>解析github相关网站域名经常经常出现问题</p>
+<h4 id="solution-7"><a href="#solution-7" class="headerlink" title="solution"></a>solution</h4><p>把代理关掉或者换个代理或者修改hosts文件，绑定ip</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">vim /etc/hosts
+# 添加
+# for github
+140.82.113.4 github.com
+199.232.69.194 github.global.ssl.fastly.net
+185.199.108.153  assets-cdn.github.com
+185.199.109.153  assets-cdn.github.com
+185.199.110.153  assets-cdn.github.com
+185.199.111.153  assets-cdn.github.com
+185.199.108.133 raw.githubusercontent.com
+185.199.109.133 raw.githubusercontent.com
+185.199.110.133 raw.githubusercontent.com
+185.199.111.133 raw.githubusercontent.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="支持emoji"><a href="#支持emoji" class="headerlink" title="支持emoji"></a>支持emoji</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">#安装支持插件
+npm install hexo-filter-github-emojis --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="不显示mermaid图表"><a href="#不显示mermaid图表" class="headerlink" title="不显示mermaid图表"></a>不显示mermaid图表</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">#安装支持插件
+npm install hexo-filter-mermaid-diagrams<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>主题配置文件</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Mermaid tag</span>
+<span class="token key atrule">mermaid</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<hr>
+<p>hexo安装10分钟，踩坑十小时😤 终于结束了！！说好了从明天起开始早起又黄了🙄</p>
+]]></content>
+      <tags>
+        <tag>tutorial</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>markdown-tutorial</title>
     <url>/2021/03/06/markdown-tutorial/</url>
     <content><![CDATA[<hr>
@@ -745,148 +1193,212 @@ section 部分名
       </tags>
   </entry>
   <entry>
-    <title>hexo-install-tutorial</title>
-    <url>/2021/03/06/hexo-install-tutorial/</url>
-    <content><![CDATA[<p>主要记录下这几天搭建第一次使用hexo博客==踩坑==的<strong>过程</strong>，为了以后能少遇到点坑</p>
-<span id="more"></span>
+    <title>resume-template</title>
+    <url>/2021/03/18/resume-template/</url>
+    <content><![CDATA[<center><h2>救救-应聘up主的简历👀</h2></center>
 
-<h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><hr>
-<p>一切以<a href="https://hexo.io/zh-cn/docs/">hexo官网安装文档</a>为准～</p>
-<h2 id="安装Homebrew-插曲"><a href="#安装Homebrew-插曲" class="headerlink" title="安装Homebrew-插曲"></a>安装Homebrew-插曲</h2><p>Homebrew 是一个包管理工具。相信我，每一个Mac都必备的包管理工具🔧</p>
-<p>打开终端<code>terminal</code><a href="https://brew.sh/">官网一行代码安装</a></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="个人信息🙋🏻‍♀️"><a href="#个人信息🙋🏻‍♀️" class="headerlink" title="个人信息🙋🏻‍♀️"></a>个人信息🙋🏻‍♀️</h3><p>🌼姓 名：救救                                    🪐籍 贯：火星</p>
+<p>👩🏻‍🦰性 别：女                                        🔥年 龄：24（也可改成工龄）</p>
+<p>📞手 机：40088088201                  📩邮 箱：<a href="mailto:youremail@xx.com">youremail@xx.com</a> </p>
+<h3 id="教育背景🎓"><a href="#教育背景🎓" class="headerlink" title="教育背景🎓"></a>教育背景🎓</h3><div style="height: 60px;">
+    <img src="/2021/03/18/resume-template/bilibili-icon.png" style="height:100%;width:75px; float:left;">
+      <br>
+    <span>Bilibili大学全日制本科，GPA ?.?/4.0，专业前?0%，英语CET-?，每年都获奖学金💰</span>
+</div>
+### 专业技能（个人特长）👩🏻‍💻
 
-<h3 id="question"><a href="#question" class="headerlink" title="question"></a>question</h3><ul>
-<li>输入这条命令回车执行后，由于访问<a href="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh%E8%BF%99%E4%B8%AA%E7%BD%91%E7%AB%99%E7%94%B1%E4%BA%8E%E5%9B%BD%E5%86%85%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98%EF%BC%8C%E7%BB%88%E7%AB%AF%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%87%BA%E7%8E%B0%E7%9B%B4%E6%8E%A5%E5%8D%A1%E6%AD%BB%EF%BC%88%E4%BD%86%E6%98%AF%E7%9B%B4%E6%8E%A5%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8D%B4%E8%83%BD%E5%BE%88%E5%BF%AB%E6%89%93%E5%BC%80%E8%BF%99%E4%B8%AA%E7%BD%91%E5%9D%80%EF%BC%89%E3%80%82">https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh这个网站由于国内网络环境问题，终端可能会出现直接卡死（但是直接用浏览器却能很快打开这个网址）。</a></li>
-<li><code>brew install</code>时下载速度非常慢</li>
+<ul>
+<li>💻扎实的==上网冲浪基础==，熟练运用==各种App==。如:<code>随时随机发现新孩子的某微</code>、<code>谢邀人在美国刚下飞机的某乎</code></li>
+<li>拥有超快的网速，计算机网络通信原理、网络协议可以跨越山海</li>
+<li>了解<code>手撕</code>文化。如：<code>手撕鸡</code>、<code>手撕鸭</code>、<code>手撕绿茶</code>、<code>手撕代码</code></li>
+<li>==看视频必三连==👍🪙🌟（<del>这么明显了，懂我意思了🐎？</del>）</li>
 </ul>
-<h3 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h3><p><a href="http://mirrors.ustc.edu.cn/help/brew.git.html">中科大源，你值得用</a> </p>
-<h1 id="安装hexo美化主题nexT"><a href="#安装hexo美化主题nexT" class="headerlink" title="安装hexo美化主题nexT"></a><a href="https://theme-next.js.org/docs/getting-started/">安装hexo美化主题nexT</a></h1><blockquote>
-<p>Open your Terminal, change to Hexo site root directory and install NexT theme:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">$ cd hexo-site
-$ npm install hexo-theme-next<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="个人爱好🙈"><a href="#个人爱好🙈" class="headerlink" title="个人爱好🙈"></a>个人爱好🙈</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> B站📺不知名的拖更up主</li>
+<li><input checked="" disabled="" type="checkbox"> 💃👯‍♂️🍉🍗🧇🥘🍔🥭🍰🍦🏃‍♀️💨</li>
+</ul>
+<h3 id="工作经历👷🏻‍♀️"><a href="#工作经历👷🏻‍♀️" class="headerlink" title="工作经历👷🏻‍♀️"></a>工作经历👷🏻‍♀️</h3><h4 id="2019-09-至今-Bilibili公司-教程部门-视频工作者"><a href="#2019-09-至今-Bilibili公司-教程部门-视频工作者" class="headerlink" title="2019.09- 至今 - Bilibili公司  - 教程部门 - 视频工作者"></a><em><strong>2019.09- 至今</strong></em> - Bilibili公司  - 教程部门 - 视频工作者</h4><blockquote>
+<p><strong>B站</strong>，是<a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86">中国大陆</a><a href="https://zh.wikipedia.org/wiki/%E8%A7%86%E9%A2%91%E5%BC%B9%E5%B9%95%E7%BD%91%E7%AB%99">弹幕视频分享网站</a>,至2020年3月31日，B站月均活跃用户达1.72亿</p>
 </blockquote>
-<p><a href="https://siriusq.top/Next%E5%8D%87%E7%BA%A7-Mac%E8%BF%81%E7%A7%BB.html">美化参考</a></p>
-<h1 id="部署参考"><a href="#部署参考" class="headerlink" title="部署参考"></a><a href="https://blog.csdn.net/yakuaback/article/details/104513748">部署参考</a></h1><p>部署插件</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="markdown教程项目"><a href="#markdown教程项目" class="headerlink" title="markdown教程项目"></a>markdown教程项目</h5><ul>
+<li>写不出来可以参照<code>STAR法则</code>(情境(situation)、任务（task）、行动(action)、结果(result)四项的缩写)</li>
+<li>这是一个教会小伙伴们如何使用markdown的视频</li>
+<li>人类的本质是复读机</li>
+<li>这是一个教会小伙伴们如何使用markdown的视频</li>
+<li>项目成果展示<div style="height: 300px;">
+      <img src="/2021/03/18/resume-template/peace-and-love.PNG" style="float:left;height:100%;width:100%;">
+</div>
+==一般两页就可以了，不用图片的话控制在一页就好，写得突出自己特点就好hr也没心情看长篇大论，这里不用在意typora渲染的图片大小，以最后导出的pdf为准==</li>
+</ul>
+<hr>
+<div style="height: 320px;">
+    <img src="/2021/03/18/resume-template/worker-princess.jpg" style="height: 100%;width: 30%;margin: auto 1%;">
+    <img src="/2021/03/18/resume-template/worker-love.jpg" style="height: 100%;width: 30%;margin: auto 1%;">
+    <img src="/2021/03/18/resume-template/worker-save-life.jpg" style="height:100%;width: 30%;margin: auto 1%;">
+</div>
 
 
+]]></content>
+      <tags>
+        <tag>life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>resume-tutorial</title>
+    <url>/2021/03/18/resume-tutorial/</url>
+    <content><![CDATA[<hr>
+<p>写在前面：这个视频能获得什么？<br>Typora的进阶用法，相当于<a href="https://www.bilibili.com/video/BV1d741147k2#reply4274436410">markdown基本用法视频</a>的一个补充。</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 更改Typora主题-定制你自己的样式<ul>
+<li><input checked="" disabled="" type="checkbox"> 介绍什么是css，选择用什么<a href="https://code.visualstudio.com/">文本编辑器</a>去更改</li>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://support.typora.io/Add-Custom-CSS/">修改主题css文件</a>, 修改颜色</li>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://support.typora.io/Width-of-Writing-Area/">修改书写编辑区大小</a></li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> 插入多个连续空格<code>&amp;emsp;</code></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://support.typora.io/Task-List/">任务列表的使用</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://support.typora.io/Version-Control/">版本恢复</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://support.typora.io/Page-Breaks/">控制导出pdf的分页位置</a></li>
+<li><input checked="" disabled="" type="checkbox"> 一个书写简历的思路</li>
+</ul>
+<p>关于<strong>简历</strong>，可以自己看着来加工，但是可能会在导出的时候要==反复调大小==（<del>当用图片多了以后</del>）。这里只是给大家一个写简历的思路（<del>保护</del>）。如果要用Typora写一个复杂的简历，我觉得就已经违背的选择使用Typora写简历的初心–<strong>简洁，清晰</strong>。</p>
+<p>导出成pdf文件的<em><strong>注意点</strong></em></p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 要检查一下分页有没有问题</li>
+<li><input checked="" disabled="" type="checkbox"> 有无多余的空白页</li>
+<li><input checked="" disabled="" type="checkbox"> 最好以<code>姓名_应聘的职位_简历</code>命名</li>
+</ul>
+<hr>
+<center><h2>救救-应聘up主的简历👀</h2></center>
 
-<h1 id="开始踩坑"><a href="#开始踩坑" class="headerlink" title="开始踩坑"></a>开始踩坑</h1><hr>
-<p>一把辛酸泪😭</p>
-<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 电脑版本
-ProductName:	macOS
-ProductVersion:	11.2.2
-BuildVersion:	20D80
-# hexo版本
-INFO  Validating config
-INFO  ==================================
-  ███╗   ██╗███████╗██╗  ██╗████████╗
-  ████╗  ██║██╔════╝╚██╗██╔╝╚══██╔══╝
-  ██╔██╗ ██║█████╗   ╚███╔╝    ██║
-  ██║╚██╗██║██╔══╝   ██╔██╗    ██║
-  ██║ ╚████║███████╗██╔╝ ██╗   ██║
-  ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝   ╚═╝
-========================================
-NexT version 8.2.2
-Documentation: https://theme-next.js.org
-========================================
-hexo: 5.4.0
-hexo-cli: 4.2.0
-os: Darwin 20.3.0 darwin arm64
-node: 15.9.0
-v8: 8.6.395.17-node.25
-uv: 1.41.0
-zlib: 1.2.11
-brotli: 1.0.9
-ares: 1.17.1
-modules: 88
-nghttp2: 1.42.0
-napi: 7
-llhttp: 2.1.3
-openssl: 1.1.1i
-cldr: 37.0
-icu: 67.1
-tz: 2019c
-unicode: 13.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="个人信息-无图🙋🏻‍♀️"><a href="#个人信息-无图🙋🏻‍♀️" class="headerlink" title="个人信息-无图🙋🏻‍♀️"></a>个人信息-无图🙋🏻‍♀️</h3><p>🌼姓 名：救救                                    🪐籍 贯：火星</p>
+<p>👩🏻‍🦰性 别：女                                        🔥年 龄：24（也可改成工龄）</p>
+<p>📞手 机：40088088201                  📩邮 箱：<a href="mailto:youremail@xx.com">youremail@xx.com</a> </p>
+<h3 id="个人信息-有图（可以放二维码、个人靓照）🙋🏻‍♀️"><a href="#个人信息-有图（可以放二维码、个人靓照）🙋🏻‍♀️" class="headerlink" title="个人信息-有图（可以放二维码、个人靓照）🙋🏻‍♀️"></a>个人信息-有图（可以放二维码、个人靓照）🙋🏻‍♀️</h3><div style="height: 200px;">
+    <table style="float: left;height:100%;width:60%;">
+        <tbody><tr>
+            <td>🌼姓 名：救救</td>
+            <td>🪐籍 贯：广西</td>
+        </tr>
+        <tr>
+            <td>👩🏻‍🦰性 别：女</td>
+            <td>🔥年 龄：24</td>
+        </tr>
+        <tr>
+            <td>📞手 机：40088088201</td>
+            <td>📩邮 箱：youremail@xx.com </td>
+        </tr>
+    </tbody></table>
+    <img src="/2021/03/18/resume-tutorial/bilibili-qrcode.PNG" style="float:left;height:80%;width:20%;margin: 2% 2% 2% 15%;">
+</div>
 
-<h2 id="部署命令太长"><a href="#部署命令太长" class="headerlink" title="部署命令太长"></a>部署命令太长</h2><h4 id="solution-1"><a href="#solution-1" class="headerlink" title="solution"></a>solution</h4><p>在<code>~/.zshrc</code>增加别名</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">alias hd='hexo clean &amp;&amp; hexo g &amp;&amp; hexo d'
-alias hs='hexo clean &amp;&amp; hexo g &amp;&amp; hexo s'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="about-、tags等指定-about-相对路径的页面"><a href="#about-、tags等指定-about-相对路径的页面" class="headerlink" title="about 、tags等指定/about/相对路径的页面"></a>about 、tags等指定/about/相对路径的页面</h2><h4 id="solution-2"><a href="#solution-2" class="headerlink" title="solution"></a>solution</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hexo new page "about"
-hexo new page "tags"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="图片显示问题-图裂"><a href="#图片显示问题-图裂" class="headerlink" title="图片显示问题-图裂"></a>图片显示问题-图裂</h2><p>markdown编辑器与博客里不能同时显示图片</p>
-<h3 id="solution-3"><a href="#solution-3" class="headerlink" title="solution"></a>solution</h3><ol>
-<li>设置每次生成文章时，同时生成一个同名文件夹，用来存放图片。<code>_config.yml</code>里找到<code>post_asset_folder</code>设置为<code>true</code>。即<code>post_asset_folder: true</code></li>
-<li>设置markdown编辑器保存图片的路径为同名文件夹并优先使用相对路径。图为使用typora编辑器</li>
-</ol>
-<p><img src="/2021/03/06/hexo-install-tutorial/image-20210306030054324.png" alt="设置图片选项"></p>
-<ol start="3">
-<li>安装插件-<strong>一定</strong>要安装下面链接里面的，网上有很多别的，亲测都不成功😢</li>
-</ol>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm install https://github.com/CodeFalling/hexo-asset-image<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="nexT配置-更改头像-路径问题"><a href="#nexT配置-更改头像-路径问题" class="headerlink" title="nexT配置-更改头像-路径问题"></a>nexT配置-更改头像-路径问题</h2><p>npm安装的主题文件在<code>node_modules/hexo-theme-next/</code>里面！！！<code>_config.next.yml</code>中使用的是相对位于``./node_modules/hexo-theme-next/source<code>的路径，所以实际要把图片发在</code>./node_modules/hexo-theme-next/source/<code>这个目录里。例如头像的实际路径为</code>/Users/shinan/blog/node_modules/hexo-theme-next/source/images/avatar.png`</p>
-<p>配置文件也是从<code>./node_modules/hexo-theme-next/</code>这里面复制出来的</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cp node_modules/hexo-theme-next/_config.yml _config.next.yml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h2 id="gitalk-出现403"><a href="#gitalk-出现403" class="headerlink" title="gitalk-出现403"></a>gitalk-出现403</h2><p>反向代理有问题<a href="https://liuyueyang.top/022111.html#%E5%88%86%E6%9E%90">参考</a></p>
-<h4 id="solution-4"><a href="#solution-4" class="headerlink" title="solution"></a>solution</h4><p><code>_config.next.yml</code>更改proxy</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">gitalk</span><span class="token punctuation">:</span>
-  <span class="token comment">#proxy: https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token # This is official proxy adress</span>
-  <span class="token key atrule">proxy</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//shielded<span class="token punctuation">-</span>brushlands<span class="token punctuation">-</span>08810.herokuapp.com/https<span class="token punctuation">:</span>//github.com/login/oauth/access_token<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>这个插件每篇文章都要<strong>登进去初始化</strong>一下</p>
-<h2 id="同时部署GitHub-gitee-自动部署分支为master"><a href="#同时部署GitHub-gitee-自动部署分支为master" class="headerlink" title="同时部署GitHub,gitee-自动部署分支为master"></a>同时部署GitHub,gitee-自动部署分支为master</h2><p>github-pages 、gitee-pages默认部署为main分支</p>
-<p>单一部署时，<code>_config.yml</code>里配置推送的分支为main生效，同时部署时就不生效了（迷惑🙁）。</p>
-<h3 id="solution-5"><a href="#solution-5" class="headerlink" title="solution"></a>solution</h3><p>在仓库里更改默认的部署分支</p>
-<p><img src="/2021/03/06/hexo-install-tutorial/image-20210306033805713.png" alt="gitee更改"></p>
-<p><img src="/2021/03/06/hexo-install-tutorial/image-20210306034610817.png" alt="github更改"></p>
-<h2 id="同时部署GitHub-gitee-只能配置其中的一个能看文章详情"><a href="#同时部署GitHub-gitee-只能配置其中的一个能看文章详情" class="headerlink" title="同时部署GitHub,gitee-只能配置其中的一个能看文章详情"></a>同时部署GitHub,gitee-只能配置其中的一个能看文章详情</h2><p>由于只能在<code>_config.yml</code>里配置一个访问路径。</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># URL
-## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-#url: http://jojo-995.github.io
-url: https://jojo-995.gitee.io<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="solution-6"><a href="#solution-6" class="headerlink" title="solution"></a>solution</h3><p>待解决。目前暂时先选择使用gitee</p>
-<h2 id="github经常在命令行里443"><a href="#github经常在命令行里443" class="headerlink" title="github经常在命令行里443"></a>github经常在命令行里443</h2><p>解析github相关网站域名经常经常出现问题</p>
-<h4 id="solution-7"><a href="#solution-7" class="headerlink" title="solution"></a>solution</h4><p>把代理关掉或者换个代理或者修改hosts文件，绑定ip</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">vim /etc/hosts
-# 添加
-# for github
-140.82.113.4 github.com
-199.232.69.194 github.global.ssl.fastly.net
-185.199.108.153  assets-cdn.github.com
-185.199.109.153  assets-cdn.github.com
-185.199.110.153  assets-cdn.github.com
-185.199.111.153  assets-cdn.github.com
-185.199.108.133 raw.githubusercontent.com
-185.199.109.133 raw.githubusercontent.com
-185.199.110.133 raw.githubusercontent.com
-185.199.111.133 raw.githubusercontent.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="支持emoji"><a href="#支持emoji" class="headerlink" title="支持emoji"></a>支持emoji</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">#安装支持插件
-npm install hexo-filter-github-emojis --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="不显示mermaid图表"><a href="#不显示mermaid图表" class="headerlink" title="不显示mermaid图表"></a>不显示mermaid图表</h2><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">#安装支持插件
-npm install hexo-filter-mermaid-diagrams<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>主题配置文件</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Mermaid tag</span>
-<span class="token key atrule">mermaid</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
 
 <hr>
-<p>hexo安装10分钟，踩坑十小时😤 终于结束了！！说好了从明天起开始早起又黄了🙄</p>
+<p>修改表格样式</p>
+<ol>
+<li>偏好设置➡️外观➡️打开主题文件夹</li>
+<li>找到对应主题的以css结尾的文件(eg. vue.css)，同目录下复制一份（防止改坏）</li>
+<li>打开对应主题的以css结尾的文件</li>
+<li>不要边框线：搜索<code>table</code> 找<code>solid</code>   注释掉</li>
+<li>不要条纹：搜索<code>thead</code> 改成<code>#ffffff</code></li>
+</ol>
+<hr>
+<h3 id="教育背景🎓"><a href="#教育背景🎓" class="headerlink" title="教育背景🎓"></a>教育背景🎓</h3><div style="height: 60px;">
+    <img src="/2021/03/18/resume-tutorial/bilibili-icon.png" style="height:100%;width:75px; float:left;">
+      <br>
+    <span>Bilibili大学全日制本科，GPA ?.?/4.0，专业前?0%，英语CET-?，每年都获奖学金💰</span>
+</div>
+
+
+<hr>
+<p>左边可以放校徽，一句话描述下大学生涯（用==数字==说话)，如果话太长了位置什么的就要自己调下</p>
+<hr>
+<hr>
+<p>描述较长的话建议用列表==分点写==</p>
+<hr>
+<h3 id="专业技能（个人特长）👩🏻‍💻"><a href="#专业技能（个人特长）👩🏻‍💻" class="headerlink" title="专业技能（个人特长）👩🏻‍💻"></a>专业技能（个人特长）👩🏻‍💻</h3><ul>
+<li>💻扎实的==上网冲浪基础==，熟练运用==各种App==。如:<code>随时随机发现新孩子的某微</code>、<code>谢邀人在美国刚下飞机的某乎</code></li>
+<li>拥有超快的网速，计算机网络通信原理、网络协议可以跨越山海</li>
+<li>了解<code>手撕</code>文化。如：<code>手撕鸡</code>、<code>手撕鸭</code>、<code>手撕绿茶</code>、<code>手撕代码</code></li>
+<li>==看视频必三连==👍🪙🌟（<del>这么明显了，懂我意思了🐎？</del>）</li>
+<li>区分<code>了解</code>，<code>熟悉</code>，<code>精通</code></li>
+</ul>
+<hr>
+<p>着重写==突出==的地方，分点有条理，善用加粗、斜体、高亮等去强调关键词</p>
+<hr>
+<h3 id="个人爱好🙈"><a href="#个人爱好🙈" class="headerlink" title="个人爱好🙈"></a>个人爱好🙈</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> B站📺不知名的拖更up主</li>
+<li><input checked="" disabled="" type="checkbox"> 💃👯‍♂️🍉🍗🧇🥘🍔🥭🍰🍦🏃‍♀️💨</li>
+<li><input checked="" disabled="" type="checkbox"> 你的任务 </li>
+</ul>
+<hr>
+<p>可以不写，看应聘公司的文化，写点==积极向上==的(<del>这里加任务列表只是以前的视频没讲任务列表咋用，这里补上，而且也好看的，也可以改样式</del>)</p>
+<hr>
+<h3 id="工作经历👷🏻‍♀️"><a href="#工作经历👷🏻‍♀️" class="headerlink" title="工作经历👷🏻‍♀️"></a>工作经历👷🏻‍♀️</h3><h4 id="2018-06-2019-06-公司-学校-部门-职位"><a href="#2018-06-2019-06-公司-学校-部门-职位" class="headerlink" title="2018.06- 2019.06 - 公司/学校  - 部门 - 职位"></a><em><strong>2018.06- 2019.06</strong></em> - <strong>公司/学校</strong>  - 部门 - 职位</h4><blockquote>
+<p>一句话描述下这个公司</p>
+</blockquote>
+<h5 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h5><ul>
+<li><p>项目的环境是什么？这个项目是干什么的？我在这个项目里有什么用？那些问题是我解决的？</p>
+</li>
+<li><p>可以放些项目的成果图</p>
+</li>
+</ul>
+<hr>
+<p>举个例子</p>
+<hr>
+<h4 id="2019-09-至今-Bilibili公司-教程部门-视频工作者"><a href="#2019-09-至今-Bilibili公司-教程部门-视频工作者" class="headerlink" title="2019.09- 至今 - Bilibili公司  - 教程部门 - 视频工作者"></a><em><strong>2019.09- 至今</strong></em> - Bilibili公司  - 教程部门 - 视频工作者</h4><blockquote>
+<p><strong>B站</strong>，是<a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86">中国大陆</a><a href="https://zh.wikipedia.org/wiki/%E8%A7%86%E9%A2%91%E5%BC%B9%E5%B9%95%E7%BD%91%E7%AB%99">弹幕视频分享网站</a>,至2020年3月31日，B站月均活跃用户达1.72亿</p>
+</blockquote>
+<h5 id="markdown教程项目"><a href="#markdown教程项目" class="headerlink" title="markdown教程项目"></a>markdown教程项目</h5><ul>
+<li>这是一个教会小伙伴们如何使用markdown的视频</li>
+<li>项目截图</li>
+</ul>
+<hr>
+<p>==单张横图==</p>
+<hr>
+<div style="height: 320px;">
+        <img src="/2021/03/18/resume-tutorial/peace-and-love.PNG" style="float:left;height:100%;width:100%;">
+</div>
+
+
+
+<hr>
+<p>==左右布局==</p>
+<hr>
+<div style="height: 420px;">
+        <img src="/2021/03/18/resume-tutorial/hi-worker.PNG" style="float:left;height:100%;width:45%;margin: auto 1%">
+        <img src="/2021/03/18/resume-tutorial/worker-road.PNG" style="float:left;height:100%;width:45%;margin: auto 1%">
+</div>
+
+
+<hr>
+<p>==左中右布局-有字==</p>
+<hr>
+<div style="height: 320px;">
+        <img src="/2021/03/18/resume-tutorial/worker-enter.jpg" style="float:left;height:100%;width:30%;margin auto 1%">
+        <div style="float:left;height:100%;width:30%;margin: auto 1%">  来点字？其实我觉得这里不要字比较好</div>
+        <img src="/2021/03/18/resume-tutorial/worker-issue.jpg" style="float:left;height:100%;width:30%;margin: auto 1%">
+</div>
+
+<hr>
+<p>==左中右布局==</p>
+<hr>
+<div style="height: 360px;">
+    <img src="/2021/03/18/resume-tutorial/worker-princess.jpg" style="height: 100%;width: 30%;margin: auto 1%;">
+    <img src="/2021/03/18/resume-tutorial/worker-love.jpg" style="height: 100%;width: 30%;margin: auto 1%;">
+    <img src="/2021/03/18/resume-tutorial/worker-save-life.jpg" style="height:100%;width: 30%;margin: auto 1%;">
+</div>
+
+
+
+<h4 id="导出pdf控制分页"><a href="#导出pdf控制分页" class="headerlink" title="导出pdf控制分页"></a>导出pdf控制分页</h4><p>在想分页的地方插入</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">page-break-after</span><span class="token punctuation">:</span> always<span class="token punctuation">;</span> <span class="token property">break-after</span><span class="token punctuation">:</span> page<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 ]]></content>
       <tags>
-        <tag>tutorial</tag>
+        <tag>life</tag>
       </tags>
   </entry>
   <entry>
@@ -895,8 +1407,8 @@ npm install hexo-filter-mermaid-diagrams<span aria-hidden="true" class="line-num
     <content><![CDATA[<h1 id="第一篇博客👀"><a href="#第一篇博客👀" class="headerlink" title="第一篇博客👀"></a>第一篇博客👀</h1><p>美化博客真的是太费时费力了 希望以后都不用再管了😭</p>
 ]]></content>
       <tags>
-        <tag>life</tag>
         <tag>study</tag>
+        <tag>life</tag>
       </tags>
   </entry>
 </search>

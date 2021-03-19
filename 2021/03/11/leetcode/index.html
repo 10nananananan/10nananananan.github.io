@@ -23,31 +23,33 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"jojo-995.gitee.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="记录生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="救救笔记库">
-<meta property="og:url" content="https://jojo-995.gitee.io/index.html">
+<meta name="description" content="Leetcode 刷题  双指针-一个遍历指针，一个指向最终结果的指针283. Move Zeroesclass Solution {     public void moveZeroes(int[] nums) {         &#x2F;&#x2F;[0...k) store non-zero         int k &#x3D; 0;         for(int i &#x3D; 0 ; i&lt; nums.len">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode">
+<meta property="og:url" content="https://jojo-995.gitee.io/2021/03/11/leetcode/index.html">
 <meta property="og:site_name" content="救救笔记库">
-<meta property="og:description" content="记录生活">
+<meta property="og:description" content="Leetcode 刷题  双指针-一个遍历指针，一个指向最终结果的指针283. Move Zeroesclass Solution {     public void moveZeroes(int[] nums) {         &#x2F;&#x2F;[0...k) store non-zero         int k &#x3D; 0;         for(int i &#x3D; 0 ; i&lt; nums.len">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-11T05:30:31.000Z">
+<meta property="article:modified_time" content="2021-03-15T11:56:14.126Z">
 <meta property="article:author" content="JoJo">
-<meta property="article:tag" content="救救">
+<meta property="article:tag" content="study">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://jojo-995.gitee.io/">
+<link rel="canonical" href="https://jojo-995.gitee.io/2021/03/11/leetcode/">
 
 
 <script data-pjax class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
-<title>救救笔记库</title>
+<title>leetcode | 救救笔记库</title>
   
 
 
@@ -173,7 +175,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -186,6 +188,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88-%E4%B8%80%E4%B8%AA%E9%81%8D%E5%8E%86%E6%8C%87%E9%92%88%EF%BC%8C%E4%B8%80%E4%B8%AA%E6%8C%87%E5%90%91%E6%9C%80%E7%BB%88%E7%BB%93%E6%9E%9C%E7%9A%84%E6%8C%87%E9%92%88"><span class="nav-number">1.</span> <span class="nav-text">双指针-一个遍历指针，一个指向最终结果的指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#283-Move-Zeroes"><span class="nav-number">1.1.</span> <span class="nav-text">283. Move Zeroes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#27-Remove-Element"><span class="nav-number">1.2.</span> <span class="nav-text">27. Remove Element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#26-Remove-Duplicates-from-Sorted-Array"><span class="nav-number">1.3.</span> <span class="nav-text">26. Remove Duplicates from Sorted Array</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#topK"><span class="nav-number">2.</span> <span class="nav-text">topK</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#215-Kth-Largest-Element-in-an-Array"><span class="nav-number">2.1.</span> <span class="nav-text">215. Kth Largest Element in an Array</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%B9%E6%92%9E%E6%8C%87%E9%92%88-%E6%B6%89%E5%8F%8A%E5%B7%A6%E5%8F%B3%E4%B8%A4%E4%B8%AA%E6%96%B9%E5%90%91%E3%80%81%E7%BF%BB%E8%BD%AC"><span class="nav-number">3.</span> <span class="nav-text">对撞指针-涉及左右两个方向、翻转</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#167-Two-Sum-II-Input-array-is-sorted"><span class="nav-number">3.1.</span> <span class="nav-text">167. Two Sum II - Input array is sorted</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#125-Valid-Palindrome"><span class="nav-number">3.2.</span> <span class="nav-text">125. Valid Palindrome</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#345-Reverse-Vowels-of-a-String"><span class="nav-number">3.3.</span> <span class="nav-text">345. Reverse Vowels of a String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-Container-With-Most-Water"><span class="nav-number">3.4.</span> <span class="nav-text">11. Container With Most Water</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3-%E5%AD%90%E4%B8%B2"><span class="nav-number">4.</span> <span class="nav-text">滑动窗口-子串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#209-Minimum-Size-Subarray-Sum"><span class="nav-number">4.1.</span> <span class="nav-text">209. Minimum Size Subarray Sum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Longest-Substring-Without-Repeating-Characters"><span class="nav-number">4.2.</span> <span class="nav-text">3. Longest Substring Without Repeating Characters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#438-Find-All-Anagrams-in-a-String"><span class="nav-number">4.3.</span> <span class="nav-text">438. Find All Anagrams in a String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#76-Minimum-Window-Substring"><span class="nav-number">4.4.</span> <span class="nav-text">76. Minimum Window Substring</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E6%95%B0%E7%BB%84%E4%B8%AD%E6%BB%A1%E8%B6%B3%E6%9F%90%E4%BA%9B%E6%9D%A1%E4%BB%B6-%E5%BC%82%E4%BD%8D%E8%AF%8D-HashSet-HashMap"><span class="nav-number">5.</span> <span class="nav-text">查找数组中满足某些条件(异位词)-HashSet,HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#349-Intersection-of-Two-Arrays"><span class="nav-number">5.1.</span> <span class="nav-text">349. Intersection of Two Arrays</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8"><span class="nav-number">6.</span> <span class="nav-text">链表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BF%BB%E8%BD%AC-pre-null"><span class="nav-number">6.1.</span> <span class="nav-text">翻转 -pre &#x3D;null</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4-pre-dummyHead"><span class="nav-number">6.2.</span> <span class="nav-text">删除-pre&#x3D;dummyHead</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -245,349 +248,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://jojo-995.gitee.io/2021/03/18/resume-template/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="JoJo">
-      <meta itemprop="description" content="记录生活">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="救救笔记库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/18/resume-template/" class="post-title-link" itemprop="url">resume-template</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-03-18 23:48:28" itemprop="dateCreated datePublished" datetime="2021-03-18T23:48:28+08:00">2021-03-18</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-19 18:25:14" itemprop="dateModified" datetime="2021-03-19T18:25:14+08:00">2021-03-19</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <center><h2>救救-应聘up主的简历👀</h2></center>
-
-<h3 id="个人信息🙋🏻‍♀️"><a href="#个人信息🙋🏻‍♀️" class="headerlink" title="个人信息🙋🏻‍♀️"></a>个人信息🙋🏻‍♀️</h3><p>🌼姓 名：救救                                    🪐籍 贯：火星</p>
-<p>👩🏻‍🦰性 别：女                                        🔥年 龄：24（也可改成工龄）</p>
-<p>📞手 机：40088088201                  📩邮 箱：<a href="mailto:youremail@xx.com">youremail@xx.com</a> </p>
-<h3 id="教育背景🎓"><a href="#教育背景🎓" class="headerlink" title="教育背景🎓"></a>教育背景🎓</h3><div style="height: 60px;">
-    <img src="/2021/03/18/resume-template/bilibili-icon.png" style="height:100%;width:75px; float:left;">
-      <br>
-    <span>Bilibili大学全日制本科，GPA ?.?/4.0，专业前?0%，英语CET-?，每年都获奖学金💰</span>
-</div>
-### 专业技能（个人特长）👩🏻‍💻
-
-<ul>
-<li>💻扎实的==上网冲浪基础==，熟练运用==各种App==。如:<code>随时随机发现新孩子的某微</code>、<code>谢邀人在美国刚下飞机的某乎</code></li>
-<li>拥有超快的网速，计算机网络通信原理、网络协议可以跨越山海</li>
-<li>了解<code>手撕</code>文化。如：<code>手撕鸡</code>、<code>手撕鸭</code>、<code>手撕绿茶</code>、<code>手撕代码</code></li>
-<li>==看视频必三连==👍🪙🌟（<del>这么明显了，懂我意思了🐎？</del>）</li>
-</ul>
-<h3 id="个人爱好🙈"><a href="#个人爱好🙈" class="headerlink" title="个人爱好🙈"></a>个人爱好🙈</h3><ul>
-<li><input checked="" disabled="" type="checkbox"> B站📺不知名的拖更up主</li>
-<li><input checked="" disabled="" type="checkbox"> 💃👯‍♂️🍉🍗🧇🥘🍔🥭🍰🍦🏃‍♀️💨</li>
-</ul>
-<h3 id="工作经历👷🏻‍♀️"><a href="#工作经历👷🏻‍♀️" class="headerlink" title="工作经历👷🏻‍♀️"></a>工作经历👷🏻‍♀️</h3><h4 id="2019-09-至今-Bilibili公司-教程部门-视频工作者"><a href="#2019-09-至今-Bilibili公司-教程部门-视频工作者" class="headerlink" title="2019.09- 至今 - Bilibili公司  - 教程部门 - 视频工作者"></a><em><strong>2019.09- 至今</strong></em> - Bilibili公司  - 教程部门 - 视频工作者</h4><blockquote>
-<p><strong>B站</strong>，是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86">中国大陆</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%A7%86%E9%A2%91%E5%BC%B9%E5%B9%95%E7%BD%91%E7%AB%99">弹幕视频分享网站</a>,至2020年3月31日，B站月均活跃用户达1.72亿</p>
-</blockquote>
-<h5 id="markdown教程项目"><a href="#markdown教程项目" class="headerlink" title="markdown教程项目"></a>markdown教程项目</h5><ul>
-<li>写不出来可以参照<code>STAR法则</code>(情境(situation)、任务（task）、行动(action)、结果(result)四项的缩写)</li>
-<li>这是一个教会小伙伴们如何使用markdown的视频</li>
-<li>人类的本质是复读机</li>
-<li>这是一个教会小伙伴们如何使用markdown的视频</li>
-<li>项目成果展示<div style="height: 300px;">
-      <img src="/2021/03/18/resume-template/peace-and-love.PNG" style="float:left;height:100%;width:100%;">
-</div>
-==一般两页就可以了，不用图片的话控制在一页就好，写得突出自己特点就好hr也没心情看长篇大论，这里不用在意typora渲染的图片大小，以最后导出的pdf为准==</li>
-</ul>
-<hr>
-<div style="height: 320px;">
-    <img src="/2021/03/18/resume-template/worker-princess.jpg" style="height: 100%;width: 30%;margin: auto 1%;">
-    <img src="/2021/03/18/resume-template/worker-love.jpg" style="height: 100%;width: 30%;margin: auto 1%;">
-    <img src="/2021/03/18/resume-template/worker-save-life.jpg" style="height:100%;width: 30%;margin: auto 1%;">
-</div>
-
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://jojo-995.gitee.io/2021/03/18/resume-tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="JoJo">
-      <meta itemprop="description" content="记录生活">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="救救笔记库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/18/resume-tutorial/" class="post-title-link" itemprop="url">resume-tutorial</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-03-18 12:41:26" itemprop="dateCreated datePublished" datetime="2021-03-18T12:41:26+08:00">2021-03-18</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-19 21:32:00" itemprop="dateModified" datetime="2021-03-19T21:32:00+08:00">2021-03-19</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <hr>
-<p>写在前面：这个视频能获得什么？<br>Typora的进阶用法，相当于<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1d741147k2#reply4274436410">markdown基本用法视频</a>的一个补充。</p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 更改Typora主题-定制你自己的样式<ul>
-<li><input checked="" disabled="" type="checkbox"> 介绍什么是css，选择用什么<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">文本编辑器</a>去更改</li>
-<li><input checked="" disabled="" type="checkbox"> <a target="_blank" rel="noopener" href="https://support.typora.io/Add-Custom-CSS/">修改主题css文件</a>, 修改颜色</li>
-<li><input checked="" disabled="" type="checkbox"> <a target="_blank" rel="noopener" href="https://support.typora.io/Width-of-Writing-Area/">修改书写编辑区大小</a></li>
-</ul>
-</li>
-<li><input checked="" disabled="" type="checkbox"> 插入多个连续空格<code>&amp;emsp;</code></li>
-<li><input checked="" disabled="" type="checkbox"> <a target="_blank" rel="noopener" href="https://support.typora.io/Task-List/">任务列表的使用</a></li>
-<li><input checked="" disabled="" type="checkbox"> <a target="_blank" rel="noopener" href="https://support.typora.io/Version-Control/">版本恢复</a></li>
-<li><input checked="" disabled="" type="checkbox"> <a target="_blank" rel="noopener" href="https://support.typora.io/Page-Breaks/">控制导出pdf的分页位置</a></li>
-<li><input checked="" disabled="" type="checkbox"> 一个书写简历的思路</li>
-</ul>
-<p>关于<strong>简历</strong>，可以自己看着来加工，但是可能会在导出的时候要==反复调大小==（<del>当用图片多了以后</del>）。这里只是给大家一个写简历的思路（<del>保护</del>）。如果要用Typora写一个复杂的简历，我觉得就已经违背的选择使用Typora写简历的初心–<strong>简洁，清晰</strong>。</p>
-<p>导出成pdf文件的<em><strong>注意点</strong></em></p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 要检查一下分页有没有问题</li>
-<li><input checked="" disabled="" type="checkbox"> 有无多余的空白页</li>
-<li><input checked="" disabled="" type="checkbox"> 最好以<code>姓名_应聘的职位_简历</code>命名</li>
-</ul>
-<hr>
-<center><h2>救救-应聘up主的简历👀</h2></center>
-
-<h3 id="个人信息-无图🙋🏻‍♀️"><a href="#个人信息-无图🙋🏻‍♀️" class="headerlink" title="个人信息-无图🙋🏻‍♀️"></a>个人信息-无图🙋🏻‍♀️</h3><p>🌼姓 名：救救                                    🪐籍 贯：火星</p>
-<p>👩🏻‍🦰性 别：女                                        🔥年 龄：24（也可改成工龄）</p>
-<p>📞手 机：40088088201                  📩邮 箱：<a href="mailto:youremail@xx.com">youremail@xx.com</a> </p>
-<h3 id="个人信息-有图（可以放二维码、个人靓照）🙋🏻‍♀️"><a href="#个人信息-有图（可以放二维码、个人靓照）🙋🏻‍♀️" class="headerlink" title="个人信息-有图（可以放二维码、个人靓照）🙋🏻‍♀️"></a>个人信息-有图（可以放二维码、个人靓照）🙋🏻‍♀️</h3><div style="height: 200px;">
-    <table style="float: left;height:100%;width:60%;">
-        <tbody><tr>
-            <td>🌼姓 名：救救</td>
-            <td>🪐籍 贯：广西</td>
-        </tr>
-        <tr>
-            <td>👩🏻‍🦰性 别：女</td>
-            <td>🔥年 龄：24</td>
-        </tr>
-        <tr>
-            <td>📞手 机：40088088201</td>
-            <td>📩邮 箱：youremail@xx.com </td>
-        </tr>
-    </tbody></table>
-    <img src="/2021/03/18/resume-tutorial/bilibili-qrcode.PNG" style="float:left;height:80%;width:20%;margin: 2% 2% 2% 15%;">
-</div>
-
-
-
-
-<hr>
-<p>修改表格样式</p>
-<ol>
-<li>偏好设置➡️外观➡️打开主题文件夹</li>
-<li>找到对应主题的以css结尾的文件(eg. vue.css)，同目录下复制一份（防止改坏）</li>
-<li>打开对应主题的以css结尾的文件</li>
-<li>不要边框线：搜索<code>table</code> 找<code>solid</code>   注释掉</li>
-<li>不要条纹：搜索<code>thead</code> 改成<code>#ffffff</code></li>
-</ol>
-<hr>
-<h3 id="教育背景🎓"><a href="#教育背景🎓" class="headerlink" title="教育背景🎓"></a>教育背景🎓</h3><div style="height: 60px;">
-    <img src="/2021/03/18/resume-tutorial/bilibili-icon.png" style="height:100%;width:75px; float:left;">
-      <br>
-    <span>Bilibili大学全日制本科，GPA ?.?/4.0，专业前?0%，英语CET-?，每年都获奖学金💰</span>
-</div>
-
-
-<hr>
-<p>左边可以放校徽，一句话描述下大学生涯（用==数字==说话)，如果话太长了位置什么的就要自己调下</p>
-<hr>
-<hr>
-<p>描述较长的话建议用列表==分点写==</p>
-<hr>
-<h3 id="专业技能（个人特长）👩🏻‍💻"><a href="#专业技能（个人特长）👩🏻‍💻" class="headerlink" title="专业技能（个人特长）👩🏻‍💻"></a>专业技能（个人特长）👩🏻‍💻</h3><ul>
-<li>💻扎实的==上网冲浪基础==，熟练运用==各种App==。如:<code>随时随机发现新孩子的某微</code>、<code>谢邀人在美国刚下飞机的某乎</code></li>
-<li>拥有超快的网速，计算机网络通信原理、网络协议可以跨越山海</li>
-<li>了解<code>手撕</code>文化。如：<code>手撕鸡</code>、<code>手撕鸭</code>、<code>手撕绿茶</code>、<code>手撕代码</code></li>
-<li>==看视频必三连==👍🪙🌟（<del>这么明显了，懂我意思了🐎？</del>）</li>
-<li>区分<code>了解</code>，<code>熟悉</code>，<code>精通</code></li>
-</ul>
-<hr>
-<p>着重写==突出==的地方，分点有条理，善用加粗、斜体、高亮等去强调关键词</p>
-<hr>
-<h3 id="个人爱好🙈"><a href="#个人爱好🙈" class="headerlink" title="个人爱好🙈"></a>个人爱好🙈</h3><ul>
-<li><input checked="" disabled="" type="checkbox"> B站📺不知名的拖更up主</li>
-<li><input checked="" disabled="" type="checkbox"> 💃👯‍♂️🍉🍗🧇🥘🍔🥭🍰🍦🏃‍♀️💨</li>
-<li><input checked="" disabled="" type="checkbox"> 你的任务 </li>
-</ul>
-<hr>
-<p>可以不写，看应聘公司的文化，写点==积极向上==的(<del>这里加任务列表只是以前的视频没讲任务列表咋用，这里补上，而且也好看的，也可以改样式</del>)</p>
-<hr>
-<h3 id="工作经历👷🏻‍♀️"><a href="#工作经历👷🏻‍♀️" class="headerlink" title="工作经历👷🏻‍♀️"></a>工作经历👷🏻‍♀️</h3><h4 id="2018-06-2019-06-公司-学校-部门-职位"><a href="#2018-06-2019-06-公司-学校-部门-职位" class="headerlink" title="2018.06- 2019.06 - 公司/学校  - 部门 - 职位"></a><em><strong>2018.06- 2019.06</strong></em> - <strong>公司/学校</strong>  - 部门 - 职位</h4><blockquote>
-<p>一句话描述下这个公司</p>
-</blockquote>
-<h5 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h5><ul>
-<li><p>项目的环境是什么？这个项目是干什么的？我在这个项目里有什么用？那些问题是我解决的？</p>
-</li>
-<li><p>可以放些项目的成果图</p>
-</li>
-</ul>
-<hr>
-<p>举个例子</p>
-<hr>
-<h4 id="2019-09-至今-Bilibili公司-教程部门-视频工作者"><a href="#2019-09-至今-Bilibili公司-教程部门-视频工作者" class="headerlink" title="2019.09- 至今 - Bilibili公司  - 教程部门 - 视频工作者"></a><em><strong>2019.09- 至今</strong></em> - Bilibili公司  - 教程部门 - 视频工作者</h4><blockquote>
-<p><strong>B站</strong>，是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86">中国大陆</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%A7%86%E9%A2%91%E5%BC%B9%E5%B9%95%E7%BD%91%E7%AB%99">弹幕视频分享网站</a>,至2020年3月31日，B站月均活跃用户达1.72亿</p>
-</blockquote>
-<h5 id="markdown教程项目"><a href="#markdown教程项目" class="headerlink" title="markdown教程项目"></a>markdown教程项目</h5><ul>
-<li>这是一个教会小伙伴们如何使用markdown的视频</li>
-<li>项目截图</li>
-</ul>
-<hr>
-<p>==单张横图==</p>
-<hr>
-<div style="height: 320px;">
-        <img src="/2021/03/18/resume-tutorial/peace-and-love.PNG" style="float:left;height:100%;width:100%;">
-</div>
-
-
-
-<hr>
-<p>==左右布局==</p>
-<hr>
-<div style="height: 420px;">
-        <img src="/2021/03/18/resume-tutorial/hi-worker.PNG" style="float:left;height:100%;width:45%;margin: auto 1%">
-        <img src="/2021/03/18/resume-tutorial/worker-road.PNG" style="float:left;height:100%;width:45%;margin: auto 1%">
-</div>
-
-
-<hr>
-<p>==左中右布局-有字==</p>
-<hr>
-<div style="height: 320px;">
-        <img src="/2021/03/18/resume-tutorial/worker-enter.jpg" style="float:left;height:100%;width:30%;margin auto 1%">
-        <div style="float:left;height:100%;width:30%;margin: auto 1%">  来点字？其实我觉得这里不要字比较好</div>
-        <img src="/2021/03/18/resume-tutorial/worker-issue.jpg" style="float:left;height:100%;width:30%;margin: auto 1%">
-</div>
-
-<hr>
-<p>==左中右布局==</p>
-<hr>
-<div style="height: 360px;">
-    <img src="/2021/03/18/resume-tutorial/worker-princess.jpg" style="height: 100%;width: 30%;margin: auto 1%;">
-    <img src="/2021/03/18/resume-tutorial/worker-love.jpg" style="height: 100%;width: 30%;margin: auto 1%;">
-    <img src="/2021/03/18/resume-tutorial/worker-save-life.jpg" style="height:100%;width: 30%;margin: auto 1%;">
-</div>
-
-
-
-<h4 id="导出pdf控制分页"><a href="#导出pdf控制分页" class="headerlink" title="导出pdf控制分页"></a>导出pdf控制分页</h4><p>在想分页的地方插入</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token style-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token style language-css"><span class="token property">page-break-after</span><span class="token punctuation">:</span> always<span class="token punctuation">;</span> <span class="token property">break-after</span><span class="token punctuation">:</span> page<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://jojo-995.gitee.io/2021/03/11/leetcode/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -600,9 +271,9 @@
       <meta itemprop="name" content="救救笔记库">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/11/leetcode/" class="post-title-link" itemprop="url">leetcode</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          leetcode
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -623,6 +294,13 @@
       </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
 </div>
 
         </div>
@@ -632,7 +310,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <hr>
+        <hr>
 <p>Leetcode 刷题</p>
 <hr>
 <h1 id="双指针-一个遍历指针，一个指向最终结果的指针"><a href="#双指针-一个遍历指针，一个指向最终结果的指针" class="headerlink" title="双指针-一个遍历指针，一个指向最终结果的指针"></a>双指针-一个遍历指针，一个指向最终结果的指针</h1><h2 id="283-Move-Zeroes"><a href="#283-Move-Zeroes" class="headerlink" title="283. Move Zeroes"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/move-zeroes/">283. Move Zeroes</a></h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
@@ -928,7 +606,6 @@
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><h2 id="翻转-pre-null"><a href="#翻转-pre-null" class="headerlink" title="翻转 -pre =null"></a>翻转 -pre =null</h2><h2 id="删除-pre-dummyHead"><a href="#删除-pre-dummyHead" class="headerlink" title="删除-pre=dummyHead"></a>删除-pre=dummyHead</h2>
-      
     </div>
 
     
@@ -936,227 +613,41 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>JoJo
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://jojo-995.gitee.io/2021/03/11/leetcode/" title="leetcode">https://jojo-995.gitee.io/2021/03/11/leetcode/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/en" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/study/" rel="tag"># study</a>
+          </div>
 
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://jojo-995.gitee.io/2021/03/06/markdown-tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="JoJo">
-      <meta itemprop="description" content="记录生活">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="救救笔记库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/06/markdown-tutorial/" class="post-title-link" itemprop="url">markdown-tutorial</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-03-06 14:06:13" itemprop="dateCreated datePublished" datetime="2021-03-06T14:06:13+08:00">2021-03-06</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-03-07 01:38:45" itemprop="dateModified" datetime="2021-03-07T01:38:45+08:00">2021-03-07</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <hr>
-<p>高情商：保姆级教程涅槃重生</p>
-<p><del>低情商：之前的🌶️👀</del></p>
-<hr>
-<h1 id="MarkDown教程"><a href="#MarkDown教程" class="headerlink" title="MarkDown教程"></a>MarkDown教程</h1><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息(我最经常就是拿来写记笔记、写<a href="http://jojo-995.gitee.io/">个人博客</a>)。视频的文档都会放在这个博客里面。博客里显示可能跟视频不一样是因为浏览器解析的问题，相信你自己电脑里的typora就好～</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/06/markdown-tutorial/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://jojo-995.gitee.io/2021/03/06/hexo-install-tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="JoJo">
-      <meta itemprop="description" content="记录生活">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="救救笔记库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/06/hexo-install-tutorial/" class="post-title-link" itemprop="url">hexo-install-tutorial</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-03-06 01:19:08 / 修改时间：21:54:02" itemprop="dateCreated datePublished" datetime="2021-03-06T01:19:08+08:00">2021-03-06</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>主要记录下这几天搭建第一次使用hexo博客==踩坑==的<strong>过程</strong>，为了以后能少遇到点坑</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/06/hexo-install-tutorial/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/03/06/markdown-tutorial/" rel="prev" title="markdown-tutorial">
+                  <i class="fa fa-chevron-left"></i> markdown-tutorial
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://jojo-995.gitee.io/2021/03/05/%E2%9C%A8%E7%99%BB%E5%9C%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="JoJo">
-      <meta itemprop="description" content="记录生活">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="救救笔记库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/05/%E2%9C%A8%E7%99%BB%E5%9C%BA/" class="post-title-link" itemprop="url">✨登场</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2021-03-05 19:31:19 / 修改时间：19:33:11" itemprop="dateCreated datePublished" datetime="2021-03-05T19:31:19+08:00">2021-03-05</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="第一篇博客👀"><a href="#第一篇博客👀" class="headerlink" title="第一篇博客👀"></a>第一篇博客👀</h1><p>美化博客真的是太费时费力了 希望以后都不用再管了😭</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+            <div class="post-nav-item">
+                <a href="/2021/03/18/resume-tutorial/" rel="next" title="resume-tutorial">
+                  resume-tutorial <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -1165,6 +656,8 @@
 
 
 
+
+    <div class="comments gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1291,6 +784,26 @@ if (document.querySelectorAll('.mermaid').length) {
     <div class="pjax">
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.css">
+
+<script>
+NexT.utils.loadComments('.gitalk-container', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'ab9cea3f5a75013e55d4',
+      clientSecret: '0fabf41b86b884af18b5b420e3f0d021fc2626a5',
+      repo        : 'gitalk-comment',
+      owner       : 'jojo-995',
+      admin       : ['jojo-995'],
+      id          : '0d8287d94a62c6c197ed437830f2b3ac',
+      proxy       : 'https://shielded-brushlands-08810.herokuapp.com/https://github.com/login/oauth/access_token',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render(document.querySelector('.gitalk-container'));
+  }, window.Gitalk);
+});
+</script>
 
     </div>
 </body>
